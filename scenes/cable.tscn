@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://4mshuqs0ajfo"]
+
+[ext_resource type="Script" uid="uid://cir6qg2c0840a" path="res://scripts/jankycable.gd" id="1_rj3a4"]
+
+[sub_resource type="Gradient" id="Gradient_tipki"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_85g3d"]
+gradient = SubResource("Gradient_tipki")
+width = 1
+
+[node name="cable" type="Node3D"]
+transform = Transform3D(1.19958, 6.42524, -4953.81, 0, 7.62323, 4236.28, 9.92779, -0.776366, 598.572, 0, 0, 0)
+script = ExtResource("1_rj3a4")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -0.005)
+texture = SubResource("GradientTexture1D_85g3d")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, -3.55271e-15, 0, 0, -0.005)
+texture = SubResource("GradientTexture1D_85g3d")
