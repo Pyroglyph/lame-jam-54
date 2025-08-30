@@ -4,7 +4,7 @@ extends CharacterBody3D
 @export var acceleration := 50.
 @export var max_speed := 2.
 @export var jump_force := 3.
-@export var mouse_sensitivity := 0.001
+@export var mouse_sensitivity := 1.
 @export var controller_sensitivity := 0.03
 
 @onready var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -46,12 +46,6 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	# Apply desired physics that we accumulated during _process
 
-	# DEBUG: Reset
-	if Input.is_key_pressed(KEY_R):
-		position = Vector3.ZERO
-		desired_vel = Vector3.ZERO
-		velocity = Vector3.ZERO
-
 	# DEBUG: Pause - Rely on pause menu for this
 	if Input.is_key_pressed(KEY_ESCAPE):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -60,7 +54,7 @@ func _physics_process(delta: float) -> void:
 	if desired_vel.length_squared() > 1:
 		desired_vel = desired_vel.normalized()
 
-	velocity += transform.basis * desired_vel
+	velocity += global_transform.basis * desired_vel
 
 	if wants_jump and is_on_floor():
 		velocity += -gravity_dir * jump_force
@@ -97,7 +91,7 @@ func _physics_process(delta: float) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
-		var pos: Vector2 = -event.relative * mouse_sensitivity
+		var pos: Vector2 = -event.relative * mouse_sensitivity / 1000.
 		rotate_by(pos.x, pos.y)
 
 
