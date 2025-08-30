@@ -35,7 +35,7 @@ fog_density = 0.015
 environment = SubResource("Environment_tefeu")
 
 [node name="cablecar" parent="." instance=ExtResource("1_tefeu")]
-transform = Transform3D(-0.152228, 0, 1.19031, 0, 1.2, 0, -1.19031, 0, -0.152228, -144.91, 184.191, 30.3105)
+transform = Transform3D(-0.126857, 0, 0.991921, 0, 1, 0, -0.991921, 0, -0.126857, -144.91, 184.191, 30.3105)
 script = ExtResource("2_85g3d")
 from = Vector3(-148.648, 184.968, 31.0154)
 to = Vector3(123.916, 20.4563, 1.17657)
@@ -51,7 +51,7 @@ transform = Transform3D(-9.99815, -0.0996822, 520.379, 0, 8.554, 16373.5, -0.192
 stretch_to = NodePath("../../cable target 2")
 
 [node name="Player" parent="cablecar" instance=ExtResource("3_tefeu")]
-transform = Transform3D(0.105714, 0, 0.826601, 0, 0.833334, 0, -0.826601, 0, 0.105714, -0.0543585, -4.82066, 0.083313)
+transform = Transform3D(0.126857, 0, 0.991921, 0, 1, 0, -0.991921, 0, 0.126857, -0.0543585, -5.78993, 0.083313)
 mouse_sensitivity = 0.5
 
 [node name="Root Scene" parent="." instance=ExtResource("2_sugp2")]
