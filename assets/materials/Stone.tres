@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://7f7qep24jxj8"]
+
+[resource]
+resource_name = "Stone"
+albedo_color = Color(0.5315, 0.533321, 0.50152, 1)
+roughness = 0.9
+metadata/extras = {
+"fromFBX": {
+"isTruePBR": false,
+"shadingModel": "Phong"
+}
+}

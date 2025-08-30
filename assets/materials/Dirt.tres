@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bbsi14asvcqpt"]
+
+[resource]
+resource_name = "Dirt"
+albedo_color = Color(0.339989, 0.301522, 0.186118, 1)
+metadata/extras = {
+"fromFBX": {
+"isTruePBR": false,
+"shadingModel": "Phong"
+}
+}
