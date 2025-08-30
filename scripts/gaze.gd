@@ -15,8 +15,8 @@ func _process(_delta: float) -> void:
 		return
 
 	if other is CollisionObject3D:
-		var o: Node = other.get_parent().get_parent()
-		# collider -> physics body -> actual node
+		var o: Node = other.get_parent()
+		# physics body -> actual node
 
 		if target != o:
 			# different target to last frame
@@ -31,3 +31,4 @@ func _process(_delta: float) -> void:
 			# same target as last frame
 			if o.has_method("gaze"):
 				o.gaze()
+

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c7eqhb8a0h2p8"]
+[gd_scene load_steps=12 format=3 uid="uid://c7eqhb8a0h2p8"]
 
 [ext_resource type="PackedScene" uid="uid://x4hbdt6rn0k3" path="res://scenes/cablecar.tscn" id="1_tefeu"]
 [ext_resource type="PackedScene" uid="uid://4mshuqs0ajfo" path="res://scenes/cable.tscn" id="2_o6xl0"]
@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://bbsi14asvcqpt" path="res://assets/materials/Dirt.tres" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://bfmf6yjmu3t28" path="res://scenes/player.tscn" id="3_tefeu"]
 [ext_resource type="PackedScene" uid="uid://dmliqgi3m0nem" path="res://assets/Mountain Group.glb" id="4_tbgi4"]
+[ext_resource type="Script" uid="uid://cc7p6oudfbits" path="res://scripts/debug_lookingat.gd" id="7_o6xl0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jyhfs"]
 
@@ -31,14 +32,14 @@ fog_density = 0.015
 environment = SubResource("Environment_tefeu")
 
 [node name="cablecar" parent="." instance=ExtResource("1_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.8552, 75.7286, 68.9289)
+transform = Transform3D(0.372712, 0, 0.927947, 0, 1, 0, -0.927947, 0, 0.372712, -50.8552, 75.7286, 68.9289)
 
 [node name="cable1" parent="cablecar" node_paths=PackedStringArray("stretch_to") instance=ExtResource("2_o6xl0")]
-transform = Transform3D(3.88358, 6.24346, 9497.1, 0, 7.35499, -9493.7, -9.21509, 2.63123, 4002.43, 0, 0, 0)
+transform = Transform3D(9.99857, -0.114631, -174.367, 0, 7.35497, -9493.74, 0.16919, 6.77431, 10304.5, 0, 0, 0)
 stretch_to = NodePath("../../cable target 1")
 
 [node name="cable2" parent="cablecar" node_paths=PackedStringArray("stretch_to") instance=ExtResource("2_o6xl0")]
-transform = Transform3D(-3.82659, 5.47912, -6251.69, 0, 8.05167, 4984.05, 9.2389, 2.26936, -2589.34, 0, 0, 0)
+transform = Transform3D(-9.99942, -0.0637076, 72.6905, 0, 8.05167, 4984.05, -0.107424, 5.93015, -6766.32, 0, 0, 0)
 stretch_to = NodePath("../../cable target 2")
 
 [node name="Player" parent="." instance=ExtResource("3_tefeu")]
@@ -60,3 +61,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -145.826, 170.666, 28.9046)
 
 [node name="cable target 2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6617, 25.8881, 94.8223)
+
+[node name="DebugLookingAt" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("7_o6xl0")
+
+[node name="Crosshair" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
